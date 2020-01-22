@@ -19,7 +19,10 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-const whitelist = [process.env.FRONTEND_URL,process.env.URL_IMG];
+//carpeta estatica para servir las imagenes
+app.use(express.static('uploads'));
+
+const whitelist = [process.env.FRONTEND_URL, process.env.URL_IMG];
 const corsOptions = {
     origin: (origin, callback) => {
         console.log(origin);
@@ -44,13 +47,11 @@ mongoose.connect(process.env.DB_URL, {
 
 app.use('/', routes());
 
-//carpeta estatica para servir las imagenes
-app.use(express.static('uploads'));
 
 const host = process.env.HOST || '0.0.0.0';
 
 const port = process.env.PORT || 5000;
 
-app.listen(port,host, () => {
-    console.log('El servidor esta corriendo en:',port);
+app.listen(port, host, () => {
+    console.log('El servidor esta corriendo en:', port);
 })
