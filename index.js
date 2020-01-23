@@ -19,6 +19,7 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
+
 //carpeta estatica para servir las imagenes
 app.use(express.static('uploads'));
 
