@@ -37,7 +37,8 @@ const corsOptions = {
     }
 }
 
-app.use(cors(corsOptions));
+//app.use(cors(corsOptions));
+app.use(cors());
 
 mongoose.Promise = global.Promise;
 
