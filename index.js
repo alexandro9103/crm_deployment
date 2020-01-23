@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({
 //carpeta estatica para servir las imagenes
 app.use(express.static('uploads'));
 
-const whitelist = [process.env.FRONTEND_URL, process.env.URL_IMG];
+const whitelist = [process.env.FRONTEND_URL];
 const corsOptions = {
     origin: (origin, callback) => {
         console.log(origin);
