@@ -26,7 +26,8 @@ app.use(express.static('uploads'));
 const whitelist = [process.env.FRONTEND_URL];
 const corsOptions = {
     origin: (origin, callback) => {
-        console.log(origin);
+        console.log("Origen: ", origin);
+        console.log(process.env.FRONTEND_URL);
         //Revisar si la peticion viene desde un server en la whitelist
         const existe = whitelist.some(dominio => dominio === origin);
         if (existe) {
